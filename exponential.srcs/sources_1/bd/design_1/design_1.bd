@@ -1,0 +1,1215 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xE1456DD20B40943F",
+      "device": "xck26-sfvc784-2LV-c",
+      "gen_directory": "../../../../exponential.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2024.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "kappa_mul_dis_bram": "",
+      "blk_mem_k": "",
+      "kappa_mul_k_0": "",
+      "cordic_0": "",
+      "xlslice_0": "",
+      "xlslice_1": "",
+      "mul_kappa_0": "",
+      "cas2bufa_0": "",
+      "dist_init_0": "",
+      "sph2cas_0": "",
+      "cordic_1": "",
+      "cordic_2": "",
+      "cordic_3": "",
+      "cordic_4": "",
+      "save_exp_out_0": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst_n": {
+        "direction": "I"
+      },
+      "start": {
+        "direction": "I"
+      },
+      "valid_out": {
+        "direction": "O"
+      },
+      "Real_value": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      },
+      "Imag_value": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      },
+      "mul_result": {
+        "direction": "O",
+        "left": "55",
+        "right": "0"
+      },
+      "theta_0": {
+        "direction": "I",
+        "left": "23",
+        "right": "0"
+      },
+      "theta_1": {
+        "direction": "I",
+        "left": "23",
+        "right": "0"
+      },
+      "phi_0": {
+        "direction": "I",
+        "left": "23",
+        "right": "0"
+      },
+      "phi_1": {
+        "direction": "I",
+        "left": "23",
+        "right": "0"
+      },
+      "bram_din_a": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      },
+      "bram_we_a": {
+        "direction": "O"
+      },
+      "bram_addr_a": {
+        "direction": "O",
+        "left": "12",
+        "right": "0"
+      }
+    },
+    "components": {
+      "kappa_mul_dis_bram": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "ip_revision": "9",
+        "xci_name": "design_1_blk_mem_gen_0_1",
+        "xci_path": "ip\\design_1_blk_mem_gen_0_1\\design_1_blk_mem_gen_0_1.xci",
+        "inst_hier_path": "kappa_mul_dis_bram",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../mem_init.coe"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          },
+          "Write_Depth_A": {
+            "value": "16"
+          },
+          "Write_Width_A": {
+            "value": "32"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "blk_mem_k": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "ip_revision": "9",
+        "xci_name": "design_1_blk_mem_gen_0_2",
+        "xci_path": "ip\\design_1_blk_mem_gen_0_2\\design_1_blk_mem_gen_0_2.xci",
+        "inst_hier_path": "blk_mem_k",
+        "parameters": {
+          "Coe_File": {
+            "value": "../../../../../../bram_k_init.coe"
+          },
+          "Load_Init_File": {
+            "value": "true"
+          },
+          "Memory_Type": {
+            "value": "True_Dual_Port_RAM"
+          },
+          "Use_RSTA_Pin": {
+            "value": "true"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          },
+          "Write_Depth_A": {
+            "value": "258"
+          },
+          "Write_Width_A": {
+            "value": "24"
+          },
+          "use_bram_block": {
+            "value": "Stand_Alone"
+          }
+        }
+      },
+      "kappa_mul_k_0": {
+        "vlnv": "xilinx.com:module_ref:kappa_mul_k:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_kappa_mul_k_0_0",
+        "xci_path": "ip\\design_1_kappa_mul_k_0_0\\design_1_kappa_mul_k_0_0.xci",
+        "inst_hier_path": "kappa_mul_k_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "kappa_mul_k",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "BRAM_IN": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_en",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "bram_dout",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_din",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_we",
+                "direction": "O"
+              },
+              "ADDR": {
+                "physical_name": "bram_addr",
+                "direction": "O",
+                "left": "3",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_clk",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "bram_rst",
+                "direction": "O"
+              }
+            }
+          },
+          "BRAM_K": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_en_k",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "bram_dout_k",
+                "direction": "I",
+                "left": "23",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_din_k",
+                "direction": "O",
+                "left": "23",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_we_k",
+                "direction": "O"
+              },
+              "ADDR": {
+                "physical_name": "bram_addr_k",
+                "direction": "O",
+                "left": "8",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_clk_k",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "bram_rst_k",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "start": {
+            "direction": "I"
+          },
+          "valid_out": {
+            "direction": "O"
+          },
+          "mul_result": {
+            "direction": "O",
+            "left": "55",
+            "right": "0"
+          },
+          "cordic_in": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          }
+        }
+      },
+      "cordic_0": {
+        "vlnv": "xilinx.com:ip:cordic:6.0",
+        "ip_revision": "23",
+        "xci_name": "design_1_cordic_0_1",
+        "xci_path": "ip\\design_1_cordic_0_1\\design_1_cordic_0_1.xci",
+        "inst_hier_path": "cordic_0",
+        "parameters": {
+          "Data_Format": {
+            "value": "SignedFraction"
+          },
+          "Functional_Selection": {
+            "value": "Sin_and_Cos"
+          },
+          "Input_Width": {
+            "value": "24"
+          },
+          "Output_Width": {
+            "value": "16"
+          },
+          "Phase_Format": {
+            "value": "Scaled_Radians"
+          }
+        }
+      },
+      "xlslice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "ip_revision": "4",
+        "xci_name": "design_1_xlslice_0_0",
+        "xci_path": "ip\\design_1_xlslice_0_0\\design_1_xlslice_0_0.xci",
+        "inst_hier_path": "xlslice_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "15"
+          }
+        }
+      },
+      "xlslice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "ip_revision": "4",
+        "xci_name": "design_1_xlslice_0_1",
+        "xci_path": "ip\\design_1_xlslice_0_1\\design_1_xlslice_0_1.xci",
+        "inst_hier_path": "xlslice_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "31"
+          },
+          "DIN_TO": {
+            "value": "16"
+          }
+        }
+      },
+      "mul_kappa_0": {
+        "vlnv": "xilinx.com:module_ref:mul_kappa:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_mul_kappa_0_0",
+        "xci_path": "ip\\design_1_mul_kappa_0_0\\design_1_mul_kappa_0_0.xci",
+        "inst_hier_path": "mul_kappa_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "mul_kappa",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "BRAM_OUT": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_en",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "bram_dout",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_din",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_we",
+                "direction": "O"
+              },
+              "ADDR": {
+                "physical_name": "bram_addr",
+                "direction": "O",
+                "left": "3",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_clk",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "bram_rst",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "start": {
+            "direction": "I"
+          },
+          "a_din": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "b0_din": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "b1_din": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "addra": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "addrb0": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "wea": {
+            "direction": "I"
+          },
+          "web0": {
+            "direction": "I"
+          },
+          "done": {
+            "direction": "O"
+          }
+        }
+      },
+      "cas2bufa_0": {
+        "vlnv": "xilinx.com:module_ref:cas2bufa:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_cas2bufa_0_0",
+        "xci_path": "ip\\design_1_cas2bufa_0_0\\design_1_cas2bufa_0_0.xci",
+        "inst_hier_path": "cas2bufa_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cas2bufa",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "start": {
+            "direction": "I"
+          },
+          "x_0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "x_1": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "y_0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "y_1": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "z_0": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "z_1": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "bufa_din": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "bufa_we": {
+            "direction": "O"
+          },
+          "bufa_addr": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "done": {
+            "direction": "O"
+          }
+        }
+      },
+      "dist_init_0": {
+        "vlnv": "xilinx.com:module_ref:dist_init:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_dist_init_0_0",
+        "xci_path": "ip\\design_1_dist_init_0_0\\design_1_dist_init_0_0.xci",
+        "inst_hier_path": "dist_init_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "dist_init",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "b0_din": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "b1_din": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "web": {
+            "direction": "O"
+          },
+          "addrb": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "sph2cas_0": {
+        "vlnv": "xilinx.com:module_ref:sph2cas:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_sph2cas_0_0",
+        "xci_path": "ip\\design_1_sph2cas_0_0\\design_1_sph2cas_0_0.xci",
+        "inst_hier_path": "sph2cas_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "sph2cas",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "theta_0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "theta_1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "phi_0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "phi_1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "s_tvalid": {
+            "direction": "I"
+          },
+          "x_0": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "x_1": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "y_0": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "y_1": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "z_0": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "z_1": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "m_dout_tvalid": {
+            "direction": "O"
+          }
+        }
+      },
+      "cordic_1": {
+        "vlnv": "xilinx.com:ip:cordic:6.0",
+        "ip_revision": "23",
+        "xci_name": "design_1_cordic_1_0",
+        "xci_path": "ip\\design_1_cordic_1_0\\design_1_cordic_1_0.xci",
+        "inst_hier_path": "cordic_1",
+        "parameters": {
+          "Data_Format": {
+            "value": "SignedFraction"
+          },
+          "Functional_Selection": {
+            "value": "Sin_and_Cos"
+          },
+          "Input_Width": {
+            "value": "24"
+          },
+          "Output_Width": {
+            "value": "16"
+          }
+        }
+      },
+      "cordic_2": {
+        "vlnv": "xilinx.com:ip:cordic:6.0",
+        "ip_revision": "23",
+        "xci_name": "design_1_cordic_2_0",
+        "xci_path": "ip\\design_1_cordic_2_0\\design_1_cordic_2_0.xci",
+        "inst_hier_path": "cordic_2",
+        "parameters": {
+          "Data_Format": {
+            "value": "SignedFraction"
+          },
+          "Functional_Selection": {
+            "value": "Sin_and_Cos"
+          },
+          "Input_Width": {
+            "value": "24"
+          },
+          "Output_Width": {
+            "value": "16"
+          }
+        }
+      },
+      "cordic_3": {
+        "vlnv": "xilinx.com:ip:cordic:6.0",
+        "ip_revision": "23",
+        "xci_name": "design_1_cordic_3_0",
+        "xci_path": "ip\\design_1_cordic_3_0\\design_1_cordic_3_0.xci",
+        "inst_hier_path": "cordic_3",
+        "parameters": {
+          "Compensation_Scaling": {
+            "value": "No_Scale_Compensation"
+          },
+          "Data_Format": {
+            "value": "SignedFraction"
+          },
+          "Functional_Selection": {
+            "value": "Sin_and_Cos"
+          },
+          "Input_Width": {
+            "value": "24"
+          },
+          "Output_Width": {
+            "value": "16"
+          }
+        }
+      },
+      "cordic_4": {
+        "vlnv": "xilinx.com:ip:cordic:6.0",
+        "ip_revision": "23",
+        "xci_name": "design_1_cordic_4_0",
+        "xci_path": "ip\\design_1_cordic_4_0\\design_1_cordic_4_0.xci",
+        "inst_hier_path": "cordic_4",
+        "parameters": {
+          "Data_Format": {
+            "value": "SignedFraction"
+          },
+          "Functional_Selection": {
+            "value": "Sin_and_Cos"
+          },
+          "Input_Width": {
+            "value": "24"
+          },
+          "Output_Width": {
+            "value": "16"
+          }
+        }
+      },
+      "save_exp_out_0": {
+        "vlnv": "xilinx.com:module_ref:save_exp_out:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_save_exp_out_0_0",
+        "xci_path": "ip\\design_1_save_exp_out_0_0\\design_1_save_exp_out_0_0.xci",
+        "inst_hier_path": "save_exp_out_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "save_exp_out",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "BRAM_REAL": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_en_a",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "bram_dout_a",
+                "direction": "I",
+                "left": "15",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_din_a",
+                "direction": "O",
+                "left": "15",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_we_a",
+                "direction": "O"
+              },
+              "ADDR": {
+                "physical_name": "bram_addr_a",
+                "direction": "O",
+                "left": "12",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_clk_a",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "bram_rst_a",
+                "direction": "O"
+              }
+            }
+          },
+          "BRAM_IMAG": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:bram:1.0",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "port_maps": {
+              "EN": {
+                "physical_name": "bram_en_b",
+                "direction": "O"
+              },
+              "DOUT": {
+                "physical_name": "bram_dout_b",
+                "direction": "I",
+                "left": "15",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "bram_din_b",
+                "direction": "O",
+                "left": "15",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "bram_we_b",
+                "direction": "O"
+              },
+              "ADDR": {
+                "physical_name": "bram_addr_b",
+                "direction": "O",
+                "left": "12",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "bram_clk_b",
+                "direction": "O"
+              },
+              "RST": {
+                "physical_name": "bram_rst_b",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "cordic_exp_out": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "en": {
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "kappa_mul_k_0_BRAM_IN": {
+        "interface_ports": [
+          "kappa_mul_dis_bram/BRAM_PORTB",
+          "kappa_mul_k_0/BRAM_IN"
+        ]
+      },
+      "kappa_mul_k_0_BRAM_K": {
+        "interface_ports": [
+          "blk_mem_k/BRAM_PORTB",
+          "kappa_mul_k_0/BRAM_K"
+        ]
+      },
+      "mul_kappa_0_BRAM_OUT": {
+        "interface_ports": [
+          "mul_kappa_0/BRAM_OUT",
+          "kappa_mul_dis_bram/BRAM_PORTA"
+        ]
+      }
+    },
+    "nets": {
+      "cas2bufa_0_bufa_addr": {
+        "ports": [
+          "cas2bufa_0/bufa_addr",
+          "mul_kappa_0/addra"
+        ]
+      },
+      "cas2bufa_0_bufa_din": {
+        "ports": [
+          "cas2bufa_0/bufa_din",
+          "mul_kappa_0/a_din"
+        ]
+      },
+      "cas2bufa_0_bufa_we": {
+        "ports": [
+          "cas2bufa_0/bufa_we",
+          "mul_kappa_0/wea"
+        ]
+      },
+      "cas2bufa_0_done": {
+        "ports": [
+          "cas2bufa_0/done",
+          "mul_kappa_0/start"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "cordic_0/aclk",
+          "kappa_mul_k_0/clk",
+          "dist_init_0/clk",
+          "cordic_1/aclk",
+          "cordic_2/aclk",
+          "cordic_3/aclk",
+          "cordic_4/aclk",
+          "mul_kappa_0/clk",
+          "cas2bufa_0/clk",
+          "sph2cas_0/clk",
+          "save_exp_out_0/clk"
+        ]
+      },
+      "cordic_0_m_axis_dout_tdata": {
+        "ports": [
+          "cordic_0/m_axis_dout_tdata",
+          "xlslice_1/Din",
+          "xlslice_0/Din",
+          "save_exp_out_0/cordic_exp_out"
+        ]
+      },
+      "cordic_0_m_axis_dout_tvalid": {
+        "ports": [
+          "cordic_0/m_axis_dout_tvalid",
+          "valid_out",
+          "save_exp_out_0/en"
+        ]
+      },
+      "cordic_1_m_axis_dout_tdata": {
+        "ports": [
+          "cordic_1/m_axis_dout_tdata",
+          "sph2cas_0/theta_0"
+        ]
+      },
+      "cordic_1_m_axis_dout_tvalid": {
+        "ports": [
+          "cordic_1/m_axis_dout_tvalid",
+          "sph2cas_0/s_tvalid"
+        ]
+      },
+      "cordic_2_m_axis_dout_tdata": {
+        "ports": [
+          "cordic_2/m_axis_dout_tdata",
+          "sph2cas_0/theta_1"
+        ]
+      },
+      "cordic_3_m_axis_dout_tdata": {
+        "ports": [
+          "cordic_3/m_axis_dout_tdata",
+          "sph2cas_0/phi_0"
+        ]
+      },
+      "cordic_4_m_axis_dout_tdata": {
+        "ports": [
+          "cordic_4/m_axis_dout_tdata",
+          "sph2cas_0/phi_1"
+        ]
+      },
+      "dist_init_0_addrb": {
+        "ports": [
+          "dist_init_0/addrb",
+          "mul_kappa_0/addrb0"
+        ]
+      },
+      "dist_init_0_b0_din": {
+        "ports": [
+          "dist_init_0/b0_din",
+          "mul_kappa_0/b0_din"
+        ]
+      },
+      "dist_init_0_b1_din": {
+        "ports": [
+          "dist_init_0/b1_din",
+          "mul_kappa_0/b1_din"
+        ]
+      },
+      "dist_init_0_web": {
+        "ports": [
+          "dist_init_0/web",
+          "mul_kappa_0/web0"
+        ]
+      },
+      "kappa_mul_k_0_cordic_in": {
+        "ports": [
+          "kappa_mul_k_0/cordic_in",
+          "cordic_0/s_axis_phase_tdata"
+        ]
+      },
+      "kappa_mul_k_0_mul_result": {
+        "ports": [
+          "kappa_mul_k_0/mul_result",
+          "mul_result"
+        ]
+      },
+      "kappa_mul_k_0_valid_out": {
+        "ports": [
+          "kappa_mul_k_0/valid_out",
+          "cordic_0/s_axis_phase_tvalid"
+        ]
+      },
+      "mul_kappa_0_done": {
+        "ports": [
+          "mul_kappa_0/done",
+          "kappa_mul_k_0/start"
+        ]
+      },
+      "phi_0_1": {
+        "ports": [
+          "phi_0",
+          "cordic_3/s_axis_phase_tdata"
+        ]
+      },
+      "phi_1_1": {
+        "ports": [
+          "phi_1",
+          "cordic_4/s_axis_phase_tdata"
+        ]
+      },
+      "rst_n_1": {
+        "ports": [
+          "rst_n",
+          "kappa_mul_k_0/rst_n",
+          "dist_init_0/rst_n",
+          "mul_kappa_0/rst_n",
+          "cas2bufa_0/rst_n",
+          "sph2cas_0/rst_n",
+          "save_exp_out_0/rst_n"
+        ]
+      },
+      "save_exp_out_0_bram_addr_a": {
+        "ports": [
+          "save_exp_out_0/bram_addr_a",
+          "bram_addr_a"
+        ]
+      },
+      "save_exp_out_0_bram_din_a": {
+        "ports": [
+          "save_exp_out_0/bram_din_a",
+          "bram_din_a"
+        ]
+      },
+      "save_exp_out_0_bram_we_a": {
+        "ports": [
+          "save_exp_out_0/bram_we_a",
+          "bram_we_a"
+        ]
+      },
+      "sph2cas_0_m_dout_tvalid": {
+        "ports": [
+          "sph2cas_0/m_dout_tvalid",
+          "cas2bufa_0/start"
+        ]
+      },
+      "sph2cas_0_x_0": {
+        "ports": [
+          "sph2cas_0/x_0",
+          "cas2bufa_0/x_0"
+        ]
+      },
+      "sph2cas_0_x_1": {
+        "ports": [
+          "sph2cas_0/x_1",
+          "cas2bufa_0/x_1"
+        ]
+      },
+      "sph2cas_0_y_0": {
+        "ports": [
+          "sph2cas_0/y_0",
+          "cas2bufa_0/y_0"
+        ]
+      },
+      "sph2cas_0_y_1": {
+        "ports": [
+          "sph2cas_0/y_1",
+          "cas2bufa_0/y_1"
+        ]
+      },
+      "sph2cas_0_z_0": {
+        "ports": [
+          "sph2cas_0/z_0",
+          "cas2bufa_0/z_0"
+        ]
+      },
+      "sph2cas_0_z_1": {
+        "ports": [
+          "sph2cas_0/z_1",
+          "cas2bufa_0/z_1"
+        ]
+      },
+      "start_1": {
+        "ports": [
+          "start",
+          "cordic_1/s_axis_phase_tvalid",
+          "cordic_2/s_axis_phase_tvalid",
+          "cordic_3/s_axis_phase_tvalid",
+          "cordic_4/s_axis_phase_tvalid"
+        ]
+      },
+      "theta_0_1": {
+        "ports": [
+          "theta_0",
+          "cordic_1/s_axis_phase_tdata"
+        ]
+      },
+      "theta_1_1": {
+        "ports": [
+          "theta_1",
+          "cordic_2/s_axis_phase_tdata"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "Real_value"
+        ]
+      },
+      "xlslice_1_Dout": {
+        "ports": [
+          "xlslice_1/Dout",
+          "Imag_value"
+        ]
+      }
+    }
+  }
+}

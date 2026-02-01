@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../exponential.ip_user_files/bd/design_1/ip/design_1_cordic_0_1/sim/design_1_cordic_0_1.vhd" \
+"../../../../exponential.ip_user_files/bd/design_1/ip/design_1_cordic_1_0/sim/design_1_cordic_1_0.vhd" \
+"../../../../exponential.ip_user_files/bd/design_1/ip/design_1_cordic_2_0/sim/design_1_cordic_2_0.vhd" \
+"../../../../exponential.ip_user_files/bd/design_1/ip/design_1_cordic_3_0/sim/design_1_cordic_3_0.vhd" \
+"../../../../exponential.ip_user_files/bd/design_1/ip/design_1_cordic_4_0/sim/design_1_cordic_4_0.vhd" \
+
+# Do not sort compile order
+nosort

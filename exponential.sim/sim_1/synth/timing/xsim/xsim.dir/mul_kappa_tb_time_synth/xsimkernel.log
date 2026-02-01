@@ -1,0 +1,7 @@
+Running: xsim.dir/mul_kappa_tb_time_synth/xsimk.exe -simmode gui -wdb mul_kappa_tb_time_synth.wdb -simrunnum 0 -socket 54923
+Design successfully loaded
+Design Loading Memory Usage: 38780 KB (Peak: 38780 KB)
+Design Loading CPU Usage: 999 ms
+Simulation completed
+Simulation Memory Usage: 42716 KB (Peak: 42716 KB)
+Simulation CPU Usage: 1156 ms

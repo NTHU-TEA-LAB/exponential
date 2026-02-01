@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Tue Jan 27 16:58:57 2026
+# Process ID         : 35008
+# Current directory  : C:/Users/guan/Desktop/pynq_project/exponential/exponential.runs/synth_1
+# Command line       : vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file           : C:/Users/guan/Desktop/pynq_project/exponential/exponential.runs/synth_1/design_1_wrapper.vds
+# Journal file       : C:/Users/guan/Desktop/pynq_project/exponential/exponential.runs/synth_1\vivado.jou
+# Running On         : LAPTOP-FM2553E0
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 7 5800H with Radeon Graphics         
+# CPU Frequency      : 3194 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 34204 MB
+# Swap memory        : 13421 MB
+# Total Virtual      : 47626 MB
+# Available Virtual  : 28256 MB
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

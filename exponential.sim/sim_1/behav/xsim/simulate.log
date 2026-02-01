@@ -1,0 +1,8 @@
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module design1_tb.uut.design_1_i.blk_mem_k.inst.native_mem_module.blk_mem_gen_v8_4_9_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module design1_tb.uut.design_1_i.kappa_mul_dis_bram.inst.native_mem_module.blk_mem_gen_v8_4_9_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+$finish called at time : 50410 ns : File "C:/Users/guan/Desktop/pynq_project/exponential/exponential.srcs/sim_1/new/design1_tb.v" Line 77
