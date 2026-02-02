@@ -28,6 +28,7 @@ module kappa_mul_k(
     output valid_out,
     output [55:0] mul_result,
     output [23:0]cordic_in,
+    output done,
 
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_IN ADDR" *)
     output  wire  [3:0] bram_addr,
@@ -71,6 +72,9 @@ module kappa_mul_k(
     reg [3:0] state, next_state;
     // reg [23:0] bram_dout_delay [0:1];
     // reg [15:0] bram_dout_k_delay[0:1];
+
+    assign done = (state == FIN);
+
     assign bram_clk = clk;
     assign bram_rst = ~rst_n;
     assign bram_en = (state == MUL || state == FIN) ? 1'b1 : 1'b0;
